@@ -1,0 +1,50 @@
+.menu {
+    color: var(--color-snow);
+    background-color: var(--color-denim);
+    padding: 20px;
+    transition: var(--transition);
+    width: 100%;
+    max-width: 300px;
+    overflow: hidden;
+}
+
+.menu nav {
+    width: 300px;
+    transition: var(--transition);
+}
+
+.menu.collapsed {
+    max-width: 66px;
+}
+
+.menu.collapsed nav {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menu__hamburgerIcon {
+    font-size: 1.6em;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.menu__heading {
+    margin-bottom: 30px;
+}
+
+.menu__heading h2 {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.menu li {
+    margin-bottom: 10px;
+}
+
+.menu li a {
+    font-weight: 600;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

@@ -1,0 +1,13 @@
+.form {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.form label {
+    flex-basis: 100%;
+}
+
+.form .half {
+    flex-basis: calc(50% - 10px);
+}

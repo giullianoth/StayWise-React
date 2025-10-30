@@ -1,0 +1,47 @@
+#root {
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  padding: 10px 26px;
+  border: none;
+  border-radius: 5px;
+  color: var(--color-white);
+  background-color: var(--color-denim);
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.button.green {
+  background-color: var(--color-kelly-green);
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.button.large {
+  font-size: 1.4em;
+  padding: 16px 32px;
+}
+
+.button.vertical {
+  flex-direction: column;
+}
+
+.button.grow:hover {
+  transform: scale(1.1);
+}
+
+.button.clear {
+  padding: 0;
+  background: none;
+  color: initial;
+}

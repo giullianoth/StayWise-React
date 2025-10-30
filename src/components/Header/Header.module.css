@@ -1,0 +1,20 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    color: var(--color-denim);
+}
+
+.header__employee {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.header__logout {
+    font-size: 1.3em;
+}

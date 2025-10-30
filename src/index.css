@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  /* Paleta de cores */
+  --color-snow: #FCF7F8;
+  --color-denim: #275DAD;
+  --color-eeire-black: #1C1E21;
+  --color-french-gray: #CED3DC;
+  --color-dim-gray: #636464;
+  --color-white: #FFF;
+
+  --color-old-gold: #C6B535;
+  --color-red-cmyk: #E52C2C;
+  --color-kelly-green: #14A914;
+
+  --color-success-background: #98ed98;
+  --color-success-text: #266426;
+
+  /* Efeito de Transição */
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::placeholder {
+  color: var(--color-french-gray);
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--color-snow);
+  color: var(--color-eeire-black);
+}
+
+img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+input, textarea, select, option {
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--color-french-gray);
+}
+
+select:not(:disabled) {
+  cursor: pointer;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+svg {
+  vertical-align: middle;
+}
