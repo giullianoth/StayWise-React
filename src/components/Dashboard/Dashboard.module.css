@@ -2,12 +2,30 @@
     flex-grow: 1;
     display: flex;
     transition: var(--transition);
+    height: 100%;
+}
+
+.buttonsLayout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .dashboard__container {
     flex-grow: 1;
-    margin: 3em;
+    padding: 3em;
     transition: var(--transition);
+    height: 100%;
+    overflow-y: auto;
+}
+
+.dashboard__home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .dashboard__heading {
@@ -60,4 +78,39 @@
 
 .dashboard__buttonAction {
     margin-top: 40px;
+}
+
+.dashboard__tabs {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-white);
+    margin-bottom: 40px;
+}
+
+.dashboard__tab {
+    flex-grow: 1;
+    padding: 12px;
+    text-align: center;
+    border-bottom: 2px solid transparent;
+}
+
+.dashboard__tab.active {
+    border-color: var(--color-denim);
+}
+
+.dashboard__tab:hover button, .dashboard__tab.active button {
+    color: var(--color-denim);
+}
+
+.dashboard__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.dashboard__changeType {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }

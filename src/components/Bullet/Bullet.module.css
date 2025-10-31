@@ -1,0 +1,32 @@
+.bullet {
+    padding: 10px;
+    background-color: var(--color-french-gray);
+    border-radius: 5px;
+    color: var(--color-dim-gray);
+    font-weight: 500;
+}
+
+.bullet.small {
+    font-size: 0.8em;
+    padding: 6px;
+}
+
+.bullet.success {
+    background-color: #98ed98;
+    color: #266426;
+}
+
+.bullet.info {
+    background-color: #aeaee4;
+    color: #1f1f68;
+}
+
+.bullet.warning {
+    background-color: #f0df80;
+    color: #81600f;
+}
+
+.bullet.error {
+    background-color: #e29f9f;
+    color: #7c2323;
+}

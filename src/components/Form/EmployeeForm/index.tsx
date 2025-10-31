@@ -1,14 +1,11 @@
-import type { ChangeEventHandler, FormEventHandler } from "react"
-import styles from "./EmployeeForm.module.css"
+import styles from "../Form.module.css"
 import { Link } from "react-router-dom"
+import { useAppContext } from "../../../context/app_context"
+import type { FormComponentProps } from "../../../types/form"
 
-type Props = {
-    onSubmit: FormEventHandler
-    onChange: ChangeEventHandler
-    action: "create" | "edit"
-}
+const EmployeeForm = ({ action, onChange, onSubmit }: FormComponentProps) => {
+    const { formFields } = useAppContext().manager
 
-const EmployeeForm = ({ action, onChange, onSubmit }: Props) => {
     return (
         <form onSubmit={onSubmit} className={styles.form}>
             <label>
@@ -16,27 +13,35 @@ const EmployeeForm = ({ action, onChange, onSubmit }: Props) => {
 
                 <input
                     type="text"
-                    name="nome" />
+                    name="nome"
+                    value={formFields?.nome || ""}
+                    onChange={onChange} />
             </label>
 
             <label className={styles.half}>
                 <span>E-mail do funcionário:</span>
                 <input
                     type="email"
-                    name="email" />
+                    name="email"
+                    value={formFields?.email || ""}
+                    onChange={onChange} />
             </label>
 
             <label className={styles.half}>
                 <span>Senha:</span>
                 <input
                     type="password"
-                    name="senha" />
+                    name="senha"
+                    value={formFields?.senha || ""}
+                    onChange={onChange} />
             </label>
 
             <label className={styles.half}>
                 <span>Perfil:</span>
                 <select
-                    name="nome_perfil">
+                    name="nome_perfil"
+                    value={formFields?.nome_perfil || ""}
+                    onChange={onChange}>
                     <option value="Recepcionista">Recepcionista</option>
                     <option value="Governança">Governança</option>
                 </select>
@@ -46,7 +51,9 @@ const EmployeeForm = ({ action, onChange, onSubmit }: Props) => {
                 <span>Status:</span>
                 <select
                     name="status"
-                    disabled={action === "create"}>
+                    disabled={action === "create"}
+                    value={formFields?.status || ""}
+                    onChange={onChange}>
                     <option value="Ativo">Ativo</option>
                     <option value="Inativo">Inativo</option>
                     <option value="Desligado">Desligado</option>
@@ -58,7 +65,7 @@ const EmployeeForm = ({ action, onChange, onSubmit }: Props) => {
                 {action === "edit" && "Atualizar"}
             </button>
 
-            <Link to="/gerente" className="button clear">
+            <Link to="/gerente/funcionarios" className="button clear">
                 Cancelar
             </Link>
         </form>

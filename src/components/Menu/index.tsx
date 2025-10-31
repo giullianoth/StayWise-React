@@ -12,7 +12,10 @@ const Menu = ({ children, employeeRole }: Props) => {
 
     return (
         <aside className={styles.menu + (collapsed ? ` ${styles.collapsed}` : "")}>
-            <div className={styles.menu__hamburgerIcon} onClick={() => setCollapsed(!collapsed)}>
+            <div
+                className={styles.menu__hamburgerIcon}
+                onClick={() => setCollapsed(!collapsed)}
+                title={collapsed ? "Expandir Menu" : "Recolher Menu"}>
                 <HiOutlineMenuAlt2 />
             </div>
 
