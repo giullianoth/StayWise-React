@@ -46,6 +46,7 @@
 
 .dashboard__listRow {
     display: grid;
+    align-items: center;
 }
 
 .dashboard__listRow:nth-child(even) {
@@ -69,7 +70,7 @@
 }
 
 .dashboard__listEdit {
-    color: var(--color-old-gold);
+    color: var(--color-old-gold) !important;
 }
 
 .dashboard__listDelete {

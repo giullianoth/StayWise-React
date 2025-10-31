@@ -8,6 +8,10 @@ import ManagerEditEmployee from './pages/Manager/EditEmployee'
 import ManagerRooms from "./pages/Manager/Rooms"
 import ManagerCreateRoom from './pages/Manager/CreateRoom'
 import ManagerChangeRoomType from './pages/Manager/ChangeRoomType'
+import Receptionist from "./pages/Receptionist/Home"
+import ReceptionistReservations from "./pages/Receptionist/Reservations"
+import ReceptionistCreateReservation from "./pages/Receptionist/CreateReservation"
+import ReceptionisEditReservation from "./pages/Receptionist/EditReservation"
 
 function App() {
   return (
@@ -16,12 +20,16 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/gerente' element={<Manager />} />
+          <Route path='/recepcionista' element={<Receptionist />} />
           <Route path='/gerente/funcionarios' element={<ManagerEmployees />} />
           <Route path='/gerente/quartos' element={<ManagerRooms />} />
+          <Route path='/recepcionista/reservas' element={<ReceptionistReservations />} />
           <Route path='/gerente/funcionarios/criar' element={<ManagerCreateEmployee />} />
-          <Route path='/gerente/funcionarios/editar/:id' element={<ManagerEditEmployee />} />
           <Route path='/gerente/quartos/criar' element={<ManagerCreateRoom />} />
+          <Route path='/recepcionista/reservas/criar' element={<ReceptionistCreateReservation />} />
+          <Route path='/gerente/funcionarios/editar/:id' element={<ManagerEditEmployee />} />
           <Route path='/gerente/quartos/alterar-tipo/:id' element={<ManagerChangeRoomType />} />
+          <Route path='/recepcionista/reservas/editar/:id' element={<ReceptionisEditReservation />} />
         </Routes>
       </BrowserRouter>
     </>
