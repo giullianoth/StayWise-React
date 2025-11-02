@@ -12,6 +12,7 @@ import Receptionist from "./pages/Receptionist/Home"
 import ReceptionistReservations from "./pages/Receptionist/Reservations"
 import ReceptionistCreateReservation from "./pages/Receptionist/CreateReservation"
 import ReceptionisEditReservation from "./pages/Receptionist/EditReservation"
+import ReceptionisCheckin from "./pages/Receptionist/Checkin"
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/gerente/funcionarios' element={<ManagerEmployees />} />
           <Route path='/gerente/quartos' element={<ManagerRooms />} />
           <Route path='/recepcionista/reservas' element={<ReceptionistReservations />} />
+          <Route path='/recepcionista/check-in' element={<ReceptionisCheckin />} />
           <Route path='/gerente/funcionarios/criar' element={<ManagerCreateEmployee />} />
           <Route path='/gerente/quartos/criar' element={<ManagerCreateRoom />} />
           <Route path='/recepcionista/reservas/criar' element={<ReceptionistCreateReservation />} />

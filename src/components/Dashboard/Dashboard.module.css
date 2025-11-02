@@ -69,6 +69,10 @@
     cursor: pointer;
 }
 
+.dashboard__listConfirm {
+    color: var(--color-kelly-green) !important;
+}
+
 .dashboard__listEdit {
     color: var(--color-old-gold) !important;
 }
