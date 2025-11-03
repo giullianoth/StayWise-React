@@ -49,10 +49,21 @@ const Rooms = () => {
                     </ul>
 
                     <div className={styles.dashboard__grid}>
-                        <RoomCard />
-                        <RoomCard />
-                        <RoomCard />
-                        <RoomCard />
+                        <RoomCard
+                            target={`/gerente/quartos/alterar-tipo/1`}
+                            title="Clique para alterar o tipo de quarto" />
+
+                        <RoomCard
+                            target={`/gerente/quartos/alterar-tipo/1`}
+                            title="Clique para alterar o tipo de quarto" />
+
+                        <RoomCard
+                            target={`/gerente/quartos/alterar-tipo/1`}
+                            title="Clique para alterar o tipo de quarto" />
+
+                        <RoomCard
+                            target={`/gerente/quartos/alterar-tipo/1`}
+                            title="Clique para alterar o tipo de quarto" />
                     </div>
 
                     <Link

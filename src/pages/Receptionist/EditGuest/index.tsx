@@ -1,12 +1,12 @@
 import type { ChangeEvent, FormEvent } from "react"
-import Dashboard from "../../../components/Dashboard"
 import styles from "../../../components/Dashboard/Dashboard.module.css"
-import RoomForm from "../../../components/Form/RoomForm"
-import Header from "../../../components/Header"
+import Dashboard from "../../../components/Dashboard"
+import ReceitopnistMenu from "../Menu"
 import Menu from "../../../components/Menu"
-import ManagerMenu from "../Menu"
+import Header from "../../../components/Header"
+import GuestForm from "../../../components/Form/GuestForm"
 
-const CreateRoom = () => {
+const EditGuest = () => {
     const handleChangeData = (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         event
     }
@@ -17,30 +17,26 @@ const CreateRoom = () => {
 
     return (
         <Dashboard>
-            <Menu employeeRole="Gerente">
-                <ManagerMenu />
+            <Menu employeeRole="Recepcionista">
+                <ReceitopnistMenu />
             </Menu>
 
             <section className={styles.dashboard__container}>
-                <Header target="/gerente" />
+                <Header target="/recepcionista" />
 
                 <section>
                     <header className={styles.dashboard__heading}>
-                        <h3>Criar Novo Quarto</h3>
+                        <h3>Editar perfil de Fulano</h3>
                     </header>
 
-                    <RoomForm
-                        action="create"
+                    <GuestForm
+                        action="edit"
                         onChange={handleChangeData}
-                        onSubmit={handleSubmit}
-                        showNumber
-                        showCategory
-                        showFare
-                        targetBack="/gerente/quartos" />
+                        onSubmit={handleSubmit} />
                 </section>
             </section>
         </Dashboard>
     )
 }
 
-export default CreateRoom
+export default EditGuest

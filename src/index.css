@@ -16,6 +16,8 @@
   --color-success-background: #98ed98;
   --color-success-text: #266426;
 
+  --color-denim-2: rgba(39, 92, 173, 0.2);
+
   /* Efeito de Transição */
   --transition: all 0.3s ease;
 }

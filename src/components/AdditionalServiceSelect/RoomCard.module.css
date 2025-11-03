@@ -1,0 +1,66 @@
+.card {
+    padding: 20px;
+    background-color: var(--color-white);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.card__checkbox {
+    display: none;
+}
+
+.card__image {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.card__image img {
+    border-radius: 5px;
+}
+
+.card__info {
+    font-size: 1.2em;
+    color: var(--color-denim);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card__description {
+    margin-top: 20px;
+}
+
+.card__quantity {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-french-gray);
+    transition: var(--transition);
+}
+
+.card__quantityChange {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    transition: var(--transition);
+}
+
+.card__quantityChange button {
+    background-color: var(--color-french-gray);
+}
+
+.card__checkbox:checked ~ .card {
+    background-color: var(--color-denim-2);
+    border-color: var(--color-denim);
+}
+
+.card__checkbox:checked ~ .card .card__quantity {
+    color: initial;
+}
+.card__checkbox:checked ~ .card .card__quantityChange button {
+    background-color: var(--color-denim);
+}

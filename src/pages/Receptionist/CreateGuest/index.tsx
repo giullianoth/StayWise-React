@@ -1,12 +1,12 @@
 import type { ChangeEvent, FormEvent } from "react"
 import Dashboard from "../../../components/Dashboard"
 import styles from "../../../components/Dashboard/Dashboard.module.css"
-import RoomForm from "../../../components/Form/RoomForm"
+import GuestForm from "../../../components/Form/GuestForm"
 import Header from "../../../components/Header"
 import Menu from "../../../components/Menu"
-import ManagerMenu from "../Menu"
+import ReceitopnistMenu from "../Menu"
 
-const CreateRoom = () => {
+const CreateGuest = () => {
     const handleChangeData = (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         event
     }
@@ -17,30 +17,26 @@ const CreateRoom = () => {
 
     return (
         <Dashboard>
-            <Menu employeeRole="Gerente">
-                <ManagerMenu />
+            <Menu employeeRole="Recepcionista">
+                <ReceitopnistMenu />
             </Menu>
 
             <section className={styles.dashboard__container}>
-                <Header target="/gerente" />
+                <Header target="/recepcionista" />
 
                 <section>
                     <header className={styles.dashboard__heading}>
-                        <h3>Criar Novo Quarto</h3>
+                        <h3>Criar novo hóspede</h3>
                     </header>
 
-                    <RoomForm
+                    <GuestForm
                         action="create"
                         onChange={handleChangeData}
-                        onSubmit={handleSubmit}
-                        showNumber
-                        showCategory
-                        showFare
-                        targetBack="/gerente/quartos" />
+                        onSubmit={handleSubmit} />
                 </section>
             </section>
         </Dashboard>
     )
 }
 
-export default CreateRoom
+export default CreateGuest

@@ -1,12 +1,12 @@
 import type { ChangeEvent, FormEvent } from "react"
-import Dashboard from "../../../components/Dashboard"
 import styles from "../../../components/Dashboard/Dashboard.module.css"
-import RoomForm from "../../../components/Form/RoomForm"
-import Header from "../../../components/Header"
+import Dashboard from "../../../components/Dashboard"
 import Menu from "../../../components/Menu"
-import ManagerMenu from "../Menu"
+import Header from "../../../components/Header"
+import HousekeepingMenu from "../Menu"
+import RoomForm from "../../../components/Form/RoomForm"
 
-const CreateRoom = () => {
+const ChangeRoomStatus = () => {
     const handleChangeData = (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         event
     }
@@ -17,30 +17,28 @@ const CreateRoom = () => {
 
     return (
         <Dashboard>
-            <Menu employeeRole="Gerente">
-                <ManagerMenu />
+            <Menu employeeRole="Governança">
+                <HousekeepingMenu />
             </Menu>
 
             <section className={styles.dashboard__container}>
-                <Header target="/gerente" />
+                <Header target="/governanca" />
 
                 <section>
                     <header className={styles.dashboard__heading}>
-                        <h3>Criar Novo Quarto</h3>
+                        <h3>Alterar status do quarto nª 50</h3>
                     </header>
 
                     <RoomForm
-                        action="create"
+                        action="edit"
                         onChange={handleChangeData}
                         onSubmit={handleSubmit}
-                        showNumber
-                        showCategory
-                        showFare
-                        targetBack="/gerente/quartos" />
+                        showStatus
+                        targetBack="/governanca/status-quartos" />
                 </section>
             </section>
         </Dashboard>
     )
 }
 
-export default CreateRoom
+export default ChangeRoomStatus

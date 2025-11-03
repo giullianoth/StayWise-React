@@ -36,6 +36,11 @@
     font-weight: 600;
 }
 
+.dashboard__search {
+    width: 50%;
+    margin-bottom: 40px;
+}
+
 .dashboard__list {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
@@ -62,7 +67,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 12px;
+    gap: 20px;
 }
 
 .dashboard__listActions span {
@@ -79,6 +84,22 @@
 
 .dashboard__listDelete {
     color: var(--color-red-cmyk) !important;
+}
+
+.dashboard__listIconLarge {
+    font-size: 1.4em;
+}
+
+.dashboard__listIconDisabled {
+    color: var(--color-dim-gray) !important;
+    cursor: not-allowed;
+}
+
+.dashboard__actions {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
 }
 
 .dashboard__buttonAction {
@@ -118,4 +139,16 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.dashboard__text {
+    margin-bottom: 20px;
+}
+
+.dashboard__consumptionValue {
+    margin-top: 40px;
+    font-size: 1.4em;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
 }

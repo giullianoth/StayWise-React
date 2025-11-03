@@ -33,7 +33,8 @@ const ChangeRoomType = () => {
                         action="edit"
                         onChange={handleChangeData}
                         onSubmit={handleSubmit}
-                        showCategory />
+                        showCategory
+                        targetBack="/gerente/quartos" />
                 </section>
             </section>
         </Dashboard>

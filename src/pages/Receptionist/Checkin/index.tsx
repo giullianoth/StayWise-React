@@ -1,14 +1,25 @@
-import type { CSSProperties } from "react"
+import { useState, type CSSProperties } from "react"
 import styles from "../../../components/Dashboard/Dashboard.module.css"
 import Dashboard from "../../../components/Dashboard"
 import Menu from "../../../components/Menu"
 import ReceitopnistMenu from "../Menu"
 import Header from "../../../components/Header"
 import { BsBoxArrowInRight, BsBoxArrowRight } from "react-icons/bs"
+import { Link } from "react-router-dom"
 
 const CheckIn = () => {
+    const [search, setSearch] = useState<string>("")
+
     const reservationGridColumns: CSSProperties = {
-        gridTemplateColumns: "repeat(9, 1fr)"
+        gridTemplateColumns: "repeat(5, 1fr)"
+    }
+
+    const handleCheckIn = () => {
+        const confirmCheckIn = window.confirm(`Deseja fazer check-in para esta data (${new Date().toLocaleDateString()})?`)
+
+        if (confirmCheckIn) {
+            console.log(`Fez check-in em ${new Date().toLocaleDateString()}`)
+        }
     }
 
     return (
@@ -24,6 +35,20 @@ const CheckIn = () => {
                     <header className={styles.dashboard__heading}>
                         <h3>Realizar Check-in / Check-out</h3>
                     </header>
+
+                    <div className={styles.dashboard__search}>
+                        <label>
+                            <span>
+                                <strong>Digite o número da reserva:</strong>
+                            </span>
+
+                            <input
+                                type="text"
+                                name="search"
+                                value={search}
+                                onChange={event => setSearch(event.target.value)} />
+                        </label>
+                    </div>
 
                     <div className={`${styles.dashboard__list} ${styles.centered}`}>
                         <div
@@ -41,25 +66,11 @@ const CheckIn = () => {
                                 <strong>Nº do quarto</strong>
                             </p>
 
-                            <p>
-                                <strong>Data check-in</strong>
-                            </p>
-
-                            <p>
-                                <strong>Data check-out</strong>
-                            </p>
-
-                            <p>
-                                <strong>Funcionário</strong>
-                            </p>
 
                             <p>
                                 <strong>Status</strong>
                             </p>
 
-                            <p>
-                                <strong>Valor total</strong>
-                            </p>
 
                             <p>
                                 <strong>Ações</strong>
@@ -72,24 +83,22 @@ const CheckIn = () => {
                             <p>1</p>
                             <p>Fulano</p>
                             <p>40</p>
-                            <p>31/10/2025</p>
-                            <p>--</p>
-                            <p>Um recepcionista</p>
                             <p>Confirmada</p>
-                            <p>R$ 159,90</p>
 
                             <p className={styles.dashboard__listActions}>
                                 <button
-                                    className={`button clear ${styles.dashboard__listConfirm}`}
+                                    onClick={handleCheckIn}
+                                    className={`button clear ${styles.dashboard__listConfirm} ${styles.dashboard__listIconLarge}`}
                                     title="Check-in">
                                     <BsBoxArrowInRight />
                                 </button>
 
-                                <button
-                                    className={`button clear ${styles.dashboard__listDelete}`}
+                                <Link
+                                    to={`/recepcionista/confirmar-check-out/1`}
+                                    className={`button clear ${styles.dashboard__listDelete} ${styles.dashboard__listIconLarge}`}
                                     title="Check-out">
                                     <BsBoxArrowRight />
-                                </button>
+                                </Link>
                             </p>
                         </div>
                     </div>

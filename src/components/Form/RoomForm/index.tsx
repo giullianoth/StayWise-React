@@ -7,9 +7,10 @@ interface Props extends FormComponentProps {
   showFare?: boolean
   showCategory?: boolean
   showStatus?: boolean
+  targetBack: string
 }
 
-const RoomForm = ({ action, onChange, onSubmit, showCategory, showFare, showNumber, showStatus }: Props) => {
+const RoomForm = ({ action, onChange, onSubmit, showCategory, showFare, showNumber, showStatus, targetBack }: Props) => {
   return (
     <form onSubmit={onSubmit} className={styles.form}>
       {showNumber &&
@@ -59,7 +60,7 @@ const RoomForm = ({ action, onChange, onSubmit, showCategory, showFare, showNumb
           {action === "edit" && "Atualizar"}
         </button>
 
-        <Link to="/gerente/quartos" className="button clear">
+        <Link to={targetBack} className="button clear">
           Cancelar
         </Link>
       </div>

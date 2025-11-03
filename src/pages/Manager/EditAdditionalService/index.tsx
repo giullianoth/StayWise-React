@@ -1,12 +1,12 @@
 import type { ChangeEvent, FormEvent } from "react"
 import Dashboard from "../../../components/Dashboard"
-import styles from "../../../components/Dashboard/Dashboard.module.css"
-import RoomForm from "../../../components/Form/RoomForm"
-import Header from "../../../components/Header"
 import Menu from "../../../components/Menu"
+import Header from "../../../components/Header"
 import ManagerMenu from "../Menu"
+import styles from "../../../components/Dashboard/Dashboard.module.css"
+import AdditionalServiceForm from "../../../components/Form/AdditionalServiceForm"
 
-const CreateRoom = () => {
+const EditAdditionalService = () => {
     const handleChangeData = (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         event
     }
@@ -26,21 +26,17 @@ const CreateRoom = () => {
 
                 <section>
                     <header className={styles.dashboard__heading}>
-                        <h3>Criar Novo Quarto</h3>
+                        <h3>Novo Serviço Adicional</h3>
                     </header>
 
-                    <RoomForm
-                        action="create"
+                    <AdditionalServiceForm
+                        action="edit"
                         onChange={handleChangeData}
-                        onSubmit={handleSubmit}
-                        showNumber
-                        showCategory
-                        showFare
-                        targetBack="/gerente/quartos" />
+                        onSubmit={handleSubmit} />
                 </section>
             </section>
         </Dashboard>
     )
 }
 
-export default CreateRoom
+export default EditAdditionalService
